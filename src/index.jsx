@@ -14,12 +14,12 @@ function App() {
                 <Canvas
                     style={{ position: 'fixed', top: 0, bottom: 0, left: 0, right: 0, overflow: 'hidden' }}
                     shadows
-                    eventSource={container.current}
                     eventPrefix="client"
                     gl={{ powerPreference: 'high-performance', antialias: true }}
                     dpr={[1, 1]}
                     onCreated={({ gl }) => {
-                        gl.setClearColor(0x000000, 1)
+                        gl.setClearColor(0x000000, 1),
+                         gl.domElement.style.touchAction = "none"
                     }}
                 >
                     <Experience />

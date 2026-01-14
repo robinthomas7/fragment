@@ -82,14 +82,14 @@ export default function BackgroundGradient({
       <shaderMaterial
         ref={mat}
         uniforms={uniforms}
-        vertexShader={/* glsl */ `
+        vertexShader={ `
           varying vec2 vUv;
           void main() {
             vUv = uv;
             gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
           }
         `}
-        fragmentShader={/* glsl */ `
+        fragmentShader={ `
           precision highp float;
 
           uniform float uTime;
@@ -152,14 +152,11 @@ export default function BackgroundGradient({
             float vignette = smoothstep(0.9, 0.2, r);
 
             vec2 p = uv * uNoiseScale;
-
-            // rotation lente du champ (fréquence contrôlée)
+   
             p = rot(uTime * uNoiseFreq) * p;
 
-            // respiration (scale contrôlée)
             p *= 1.0 + sin(uTime * uBreatheFreq) * uBreatheAmp;
 
-            // warping animé (fréquence + amplitude contrôlées)
             vec2 warp;
             warp.x = fbm(p + vec2(1.3,  uTime * uNoiseWarpFreq));
             warp.y = fbm(p + vec2(8.1, -uTime * uNoiseWarpFreq * 0.9));

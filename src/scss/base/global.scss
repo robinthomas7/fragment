@@ -24,5 +24,6 @@ body,
 }
 
 .container , .container canvas { 
-    touch-action: pan-y
+    touch-action: pan-y;
+     touch-action: none;
 }
