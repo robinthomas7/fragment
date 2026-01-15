@@ -14,5 +14,18 @@ export const RockAsset = {
     //Si visuellement ok, pour plus de propagation 
     // tu peux augmenter ces deux paramètres
     effectFadeDuration : 1.2,
-    effectSpeed : 1.2
+    effectSpeed : 1.2,
+
+    //élément DOM à écouter pour récupérer les infos
+    domElement :undefined 
+}
+
+
+
+export function addStyleDomElement() {
+    if(!RockAsset.domElement) return
+    const elementName = RockAsset.domElement
+    const domElement = document.querySelector(elementName)
+
+    domElement.style.touchAction = "pan-y"
 }

@@ -13,17 +13,3 @@ body,
     scroll-behavior: smooth;
 }
 
-.container {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  touch-action: none;
-  pointer-events: auto;
-  width: 100vw;
-  height: 100vh;
-}
-
-.container , .container canvas { 
-    touch-action: pan-y;
-     touch-action: none;
-}

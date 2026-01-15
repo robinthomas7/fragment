@@ -8,7 +8,7 @@ import BackgroundGradient from "./components/BackgroundGradient"
 export default function Experience() {
 
     return <>
-        <Perf />
+        {/* <Perf /> */}
         <Environment preset="city" />
         <RockPaint/>
         <Camera />

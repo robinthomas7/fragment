@@ -8,9 +8,9 @@ export default function BackgroundGradient({
   z = -2,
 
   speed = 0.2,           
-  noiseScale = 3.0,       
-  noiseAmp = 0.1,        
-  noiseFreq = 0.0,       
+  noiseScale = 5.0,       
+  noiseAmp = 0.4,        
+  noiseFreq = 0.2,       
   noiseWarpFreq = 0.8,   
   noiseAnim = 0.2,       
   breatheAmp = 0.8,      
